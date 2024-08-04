@@ -1,0 +1,57 @@
+{
+    "proxy": {
+        "cloudflare": false,
+        "maxLogLength": 5,
+        "adminsecret": "af02b845-2ab2-475e-be1b-b1ca6b6cb884",
+        "apisecret": "bd7ead0c-9794-424d-b2fa-219adcc16bcf",
+        "secrets": {
+            "captcha": "00662ea3-2df9-4d9d-9b1e-f7c4abdf66b3",
+            "cookie": "ce1c72be-a7d2-4509-93d3-05e4e0e55912",
+            "javascript": "7210064c-09dd-454f-a943-1ce609f79893"
+        },
+        "timeout": {
+            "idle": 5,
+            "read": 5,
+            "write": 7,
+            "read_header": 5
+        },
+        "ratelimits": {
+            "challengeFailures": 40,
+            "noRequestsSent": 10,
+            "requests": 500,
+            "unknownFingerprint": 150
+        },
+        "colors": [
+            "0",
+            "31"
+        ]
+    },
+    "domains": [
+        {
+            "name": "robloxi.com.ng",
+            "backend": "216.244.81.148",
+            "scheme": "https",
+            "certificate": "robloxi.com.ng.pem",
+            "key": "robloxi.com.ng.pem",
+            "webhook": {
+                "url": "https://discord.com/api/webhooks/1249972978947719239/WTOMK4w2WsmP9-83xLKTbk9heoIaonLbjzo79A5fqN4uaLV6pYjXnzN9cAPInicVc8Dt",
+                "name": "Notification",
+                "avatar": "https://avatars.githubusercontent.com/u/73783549",
+                "attack_start_msg": "A DDoS attack has been detected against your domain `{{domain.name}}`",
+                "attack_stop_msg": "The DDoS attack against your domain `{{domain.name}}` has stopped"
+            },
+            "firewallRules": [
+                {
+                    "expression": "(ip.bot eq \"STRESS\")",
+                    "action": "4"
+                }
+            ],
+            "bypassStage1": 75,
+            "bypassStage2": 250,
+            "disableBypassStage3": 100,
+            "disableRawStage3": 250,
+            "disableBypassStage2": 50,
+            "disableRawStage2": 75
+        }
+    ]
+}
